@@ -12,7 +12,7 @@
     function test() {
       var query = window.location.search.substring(1);
       var num = query.split("&").map(extract_num).reduce(function(a, b) {return a*b;}, 1);
-      document.write(num);
+      if (query) document.write(num);
     }
     </script>
   </body>
