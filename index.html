@@ -6,10 +6,13 @@
   </head>
   <body onload="test()">
     <script type="text/javascript">
+    function extract_num(s) {
+      return parseInt(s.split("=")[1]);
+    }
     function test() {
       var query = window.location.search.substring(1);
-      var list = query.split("&").map(split("="));
-      document.write(parseInt(list[1])*parseInt(list[3]));
+      var num = query.split("&").map(extract_num).reduce(function(a, b) {return a*b;}, 1);
+      document.write(num);
     }
     </script>
   </body>
