@@ -8,7 +8,8 @@
     <script type="text/javascript">
     function test() {
       var query = window.location.search.substring(1);
-      document.write(query);
+      var list = query.split("&").map(split("="));
+      document.write(parseInt(list[1])*parseInt(list[3]));
     }
     </script>
   </body>
